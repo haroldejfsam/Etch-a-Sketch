@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Etch-aSketch</h1>
@@ -13,9 +14,12 @@
         <div id="colorPicker"></div>
         <div id="randomColors"></div>
         <div id="eraser"></div>
-        <div id="gridPicker"></div>
+        <div id="gridPicker">
+            <input type="range" min="16" max="100" value="16" class="slider" id="slider">
+            <div id="sliderValue"></div>
+        </div>
 
     </div>
-    <script src="script.js"></script>
+    
 </body>
 </html>
