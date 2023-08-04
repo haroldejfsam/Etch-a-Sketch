@@ -4,6 +4,6 @@ const slider = document.querySelector('#slider');
 const divSliderValue = document.querySelector('#sliderValue');
 divSliderValue.textContent = slider.value;
 
-slider.oninput = function() {
-  divSliderValue.textContent = this.value;
-};
+slider.addEventListener('input', (e) => {
+  divSliderValue.textContent = e.target.value;
+});
