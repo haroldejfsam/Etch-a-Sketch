@@ -9,14 +9,14 @@ const container = document.querySelector('#container');
 slider.addEventListener('input', (e) => {
   divSliderValue.textContent = `${e.target.value} x ${e.target.value}`;
   container.replaceChildren();
-  createDivs(slider.value);
+  createGrid(slider.value);
 });
 
 
 
 
 
-function createDivs(num) {
+function createGrid(num) {
 
   
 
@@ -40,5 +40,5 @@ function createDivs(num) {
 
 }
 
-createDivs(slider.value);
+createGrid(slider.value);
 
