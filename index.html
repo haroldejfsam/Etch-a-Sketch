@@ -11,17 +11,23 @@
     <h1>Etch-a-Sketch</h1>
     <div id="container"></div>
     <div id="tools">
+        
         <div id="colorPickerContainer">
-            <label for="colorPicker">Choose color:</label>
+            <label for="colorPicker">Choose pen color:</label>
             <input type="color" name="colorPicker" id="colorPicker">
+            <button id="btnPen">PEN</button>
             
         </div>
         <div id="randomColors">
-            <button>Random colors</button>
+            <button>RANDOM COLORS</button>
         </div>
-        <div id="eraser">
-            <button>ERASER</button>
+        <div id="divEraser">
+            <button id="btnEraser">ERASER</button>
         </div>
+        <div id="divClear">
+            <button id="btnClear">CLEAR</button>
+        </div>
+
         <div id="gridPicker">
             <label for="slider">Choose grid size</label><br/>
             <input type="range" name="slider" min="16" max="100" value="16" id="slider">
