@@ -1,20 +1,31 @@
 const slider = document.querySelector("#slider");
 const divSliderValue = document.querySelector("#sliderValue");
-divSliderValue.textContent = `${slider.value} x ${slider.value}`;
 const container = document.querySelector("#container");
 const colorPicker = document.querySelector("#colorPicker");
 const btnGrid = document.querySelector("#btnGrid");
 const btnClear = document.querySelector("#btnClear");
 const btnEraser = document.querySelector("#btnEraser");
 const btnPen = document.querySelector("#btnPen");
+const btnRandom = document.querySelector("#btnRandom");
 let gridElements = document.querySelector(".gridElement");
 let drawState = false;
+
+divSliderValue.textContent = `${slider.value} x ${slider.value}`;
 
 slider.addEventListener("input", (e) => {
   divSliderValue.textContent = `${e.target.value} x ${e.target.value}`;
   container.replaceChildren();
   createGrid(slider.value);
 });
+
+let getRandomColor = ()=> {
+  let rColor = Math.floor(Math.random() * 256);
+  let gColor = Math.floor(Math.random() * 256);
+  let bColor = Math.floor(Math.random() * 256);
+
+  return `rgb(${rColor}, ${gColor}, ${bColor})`
+
+}
 
 function createGrid(num) {
   // Creates grid column and gives each column a class of 'column'
@@ -77,6 +88,25 @@ btnPen.addEventListener("click", () => {
 });
 
 // Random colors listener
+btnRandom.addEventListener("click", () => {
+  gridElements = document.querySelectorAll(".gridElement");
+  for (let index = 0; index < gridElements.length; index++) {
+    const element = gridElements[index];
+    element.addEventListener("mouseenter", (e) => {
+      if (drawState) {
+        e.target.style.cssText = `background-color: ${getRandomColor()};`;
+      }
+    });
+  }
+  for (let index = 0; index < gridElements.length; index++) {
+    const element = gridElements[index];
+    element.addEventListener("click", (e) => {
+      if (!drawState) {
+        e.target.style.cssText = `background-color: ${getRandomColor()};`;
+      }
+    });
+  }
+});
 
 
 
