@@ -20,10 +20,10 @@
 }
 
 .gridElement {
-    border: 1px solid grey;
     flex: 1;
     margin: 0%;
     padding: 0%;
+    
     
 }
 
@@ -47,4 +47,12 @@ body {
     margin: 0%;
     padding: 0%;
     
+}
+
+#colorPicker {
+    height: 21px;
+}
+
+.gridOn {
+    border: 1px solid grey;
 }
