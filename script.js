@@ -60,24 +60,25 @@ btnPen.addEventListener("click", () => {
   gridElements = document.querySelectorAll(".gridElement");
   for (let index = 0; index < gridElements.length; index++) {
     const element = gridElements[index];
-    element.addEventListener("mouseenter", (e)=> {
+    element.addEventListener("mouseenter", (e) => {
       if (drawState) {
         e.target.style.cssText = `background-color: ${colorPicker.value};`;
       }
     });
-  
-  };
+  }
   for (let index = 0; index < gridElements.length; index++) {
     const element = gridElements[index];
-    element.addEventListener("click", (e)=> {
-      
+    element.addEventListener("click", (e) => {
       if (!drawState) {
         e.target.style.cssText = `background-color: ${colorPicker.value};`;
       }
     });
-  
   }
 });
+
+// Random colors listener
+
+
 
 // Eraser button listener
 btnEraser.addEventListener("click", () => {
@@ -111,4 +112,3 @@ btnClear.addEventListener("click", () => {
   container.replaceChildren();
   createGrid(slider.value);
 });
-
